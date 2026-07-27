@@ -93,7 +93,7 @@ ThinkBoard
 Clone this repository
 
 ```bash
-git clone https://github.com/Nabil557/mern-Thinkboard.git
+git clone https://github.com/b1wwwwww/mern-Thinkboard.git
 ```
 
 Install dependencies
