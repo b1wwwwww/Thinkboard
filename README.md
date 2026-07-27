@@ -9,7 +9,7 @@ A modern full-stack note-taking application built with the MERN Stack.
 
 ## 🚀 Live Demo
 
-👉 thinkboard.railway.internal
+👉 thinkboard-txt.up.railway.app
 
 ---
 
