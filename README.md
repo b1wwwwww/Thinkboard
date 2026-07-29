@@ -9,8 +9,7 @@ A modern full-stack note-taking application built with the MERN Stack.
 
 ## 🚀 Live Demo
 
-👉  thinkboard-txt.up.railway.app
-
+👉 [Live Demo](https://thinkboard-txt.up.railway.app)
 ---
 
 ## 📸 Screenshot
