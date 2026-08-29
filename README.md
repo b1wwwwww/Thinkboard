@@ -9,8 +9,7 @@ A modern full-stack note-taking application built with the MERN Stack.
 
 ## 🚀 Live Demo
 
-👉 https://mern-thinkboard-production-3bd4.up.railway.app
-
+👉 https://thinkboard-txt.up.railway.app
 ---
 
 ## 📸 Screenshot
@@ -93,7 +92,7 @@ ThinkBoard
 Clone this repository
 
 ```bash
-git clone https://github.com/Nabil557/mern-Thinkboard.git
+git clone https://github.com/b1wwwwww/mern-Thinkboard.git
 ```
 
 Install dependencies
