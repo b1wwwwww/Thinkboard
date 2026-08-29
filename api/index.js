@@ -15,6 +15,7 @@ import Note from "../Backend/src/models/Note.js";
 dotenv.config();
 
 const app = express();
+let dbReady = false;
 
 // Middleware untuk mengizinkan origin dari Vercel dan localhost.
 const allowedOrigins = [
@@ -39,6 +40,25 @@ app.use(
 app.use(express.json());
 app.use(rateLimiter);
 
+const ensureDatabaseConnection = async (req, res, next) => {
+  if (!dbReady) {
+    try {
+      await connectDB();
+      dbReady = true;
+      console.log("MongoDB connected successfully from Vercel API.");
+    } catch (error) {
+      console.error("Database connection failed:", error.message);
+      return res.status(500).json({
+        message: "Database connection failed. Please check MONGO_URI.",
+      });
+    }
+  }
+
+  next();
+};
+
+app.use(ensureDatabaseConnection);
+
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", message: "ThinkBoard API is running" });
 });
@@ -54,20 +74,3 @@ export default app;
 export const config = {
   runtime: "nodejs",
 };
-
-if (process.env.NODE_ENV !== "production") {
-  connectDB()
-    .then(() => {
-      const PORT = process.env.PORT || 5001;
-      app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-      });
-    })
-    .catch((err) => {
-      console.error(
-        "Failed to start server due to DB connection error:",
-        err.message,
-      );
-      process.exit(1);
-    });
-}
