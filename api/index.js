@@ -1,7 +1,13 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { createNote, deleteNote, getAllNotes, getNoteById, updateNote } from "../Backend/src/controllers/notesController.js";
+import {
+  createNote,
+  deleteNote,
+  getAllNotes,
+  getNoteById,
+  updateNote,
+} from "../Backend/src/controllers/notesController.js";
 import { connectDB } from "../Backend/src/config/db.js";
 import rateLimiter from "../Backend/src/middleware/rateLimiter.js";
 import Note from "../Backend/src/models/Note.js";
@@ -58,7 +64,10 @@ if (process.env.NODE_ENV !== "production") {
       });
     })
     .catch((err) => {
-      console.error("Failed to start server due to DB connection error:", err.message);
+      console.error(
+        "Failed to start server due to DB connection error:",
+        err.message,
+      );
       process.exit(1);
     });
 }
