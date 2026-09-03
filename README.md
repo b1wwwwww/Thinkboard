@@ -9,7 +9,7 @@ A modern full-stack note-taking application built with the MERN Stack.
 
 ## 🚀 Live Demo
 
-👉 thinkboard-note.vercel.app
+👉 https://thinkboard-note.vercel.app
 ---
 
 ## 📸 Screenshot
