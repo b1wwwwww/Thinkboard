@@ -1,4 +1,4 @@
-# 📝 ThinkBoard
+<img width="959" height="474" alt="image" src="https://github.com/user-attachments/assets/1325ec48-9893-4f73-a608-04f5d6a5c3f6" /># 📝 ThinkBoard
 
 A modern full-stack note-taking application built with the MERN Stack.
 
@@ -9,14 +9,16 @@ A modern full-stack note-taking application built with the MERN Stack.
 
 ## 🚀 Live Demo
 
-👉 coming soon
+👉 thinkboard-note.vercel.app
 ---
 
 ## 📸 Screenshot
 
 > Replace this image with your latest screenshot.
 
-![ThinkBoard](./assets/thinkboard-home.png)
+
+![ThinkBoard](<img width="959" height="474" alt="image" src="https://github.com/user-attachments/assets/36eee8d2-6a2c-49ee-99d7-08e90986676f" />
+)
 
 ---
 
