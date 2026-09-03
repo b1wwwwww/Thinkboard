@@ -35,7 +35,7 @@ const CreatePage = () => {
           icon: "💀",
         });
       } else {
-        toast.error("Failed to created note");
+        toast.error(error.response?.data?.message || "Failed to created note");
       }
     } finally {
       setLoading(false);
