@@ -5,7 +5,7 @@ export const connectDB = async () => {
 
   if (!mongoUri) {
     throw new Error(
-      "MONGO_URI is not defined. Set it in Railway environment variables.",
+      "MONGO_URI is not defined. Set it in Vercel environment variables.",
     );
   }
 
