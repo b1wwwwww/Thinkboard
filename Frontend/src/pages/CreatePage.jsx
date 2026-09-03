@@ -1,9 +1,9 @@
-import api from "../lib/axios"
+import api from "../lib/axios";
 import { useState } from "react";
 import { ArrowLeftIcon } from "lucide-react";
 import toast from "react-hot-toast";
-import { Link, useNavigate } from "react-router"; 
-  
+import { Link, useNavigate } from "react-router";
+
 const CreatePage = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -13,36 +13,36 @@ const CreatePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // if(!title.trim() || !content.trim()){
     //   toast.error("All fields are required");
     //   return;
     // }
 
-    setLoading(true)
+    setLoading(true);
     try {
       await api.post("/notes", {
         title,
         content,
       });
       toast.success("note created succesfully!");
-      navigate("/")
+      navigate("/");
     } catch (error) {
       console.log("Error creating note", error);
-      if(error.response.status === 429){
-        toast.error("Slow down! You're creating notes too fast", { 
+      if (error.response?.status === 429) {
+        toast.error("Slow down! You're creating notes too fast", {
           duraion: 4000,
           icon: "💀",
         });
-      }else{
-        toast.error("Failed to created note")
+      } else {
+        toast.error("Failed to created note");
       }
     } finally {
       setLoading(false);
     }
   };
 
-  return (  
+  return (
     <div className="min-h-screen bg-base-200">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
@@ -81,7 +81,11 @@ const CreatePage = () => {
                 </div>
 
                 <div className="card-actions justify-end">
-                  <button type="submit" className="btn btn-primary" disabled={loading}>
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    disabled={loading}
+                  >
                     {loading ? "Creating..." : "Create Note"}
                   </button>
                 </div>
