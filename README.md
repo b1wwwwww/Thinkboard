@@ -1,4 +1,4 @@
-<img width="959" height="474" alt="image" src="https://github.com/user-attachments/assets/1325ec48-9893-4f73-a608-04f5d6a5c3f6" /># 📝 ThinkBoard
+## 📝 ThinkBoard
 
 A modern full-stack note-taking application built with the MERN Stack.
 
