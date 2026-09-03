@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "npm install --prefix ./Frontend && npm run build --prefix ./Frontend",
+    "build": "npm install --include=dev --prefix ./Frontend && npm run build --prefix ./Frontend",
     "start": "node api/index.js"
   },
   "dependencies": {
