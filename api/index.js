@@ -21,12 +21,18 @@ let dbReady = false;
 const allowedOrigins = [
   "http://localhost:5173",
   process.env.FRONTEND_URL,
+  process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`,
 ].filter(Boolean);
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
+      // Request same-origin dari domain Vercel tidak membutuhkan CORS khusus.
+      if (
+        !origin ||
+        allowedOrigins.includes(origin) ||
+        origin === "https://thinkboard-note.vercel.app"
+      ) {
         callback(null, true);
         return;
       }
